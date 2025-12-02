@@ -74,7 +74,7 @@ export function AnimeCard({ title, posterUrl, genres, episodes, score, startSeas
               )}
 
               {/* Score */}
-              <div className="flex items-center gap-2">
+              <div className="flex items-center justify-center gap-2">
                 <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
                 <span className="text-2xl font-bold text-foreground">{score.toFixed(2)}</span>
               </div>
@@ -98,7 +98,7 @@ export function AnimeCard({ title, posterUrl, genres, episodes, score, startSeas
               {/* Genres */}
               <div>
                 <h3 className="text-sm font-semibold text-muted-foreground mb-2">Genres</h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {genres.map((genre) => (
                     <span key={genre} className="px-2 py-1 bg-primary/10 text-primary text-xs rounded-md">
                       {genre}

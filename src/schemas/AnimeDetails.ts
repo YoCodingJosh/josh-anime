@@ -30,7 +30,7 @@ export const LightweightAnimeDetailsSchema = z.object({
 
 export type LightweightAnimeDetails = z.infer<typeof LightweightAnimeDetailsSchema>;
 
-export const DetailedFields = LightweightFields + ',synopsis,background,studios'
+export const DetailedFields = LightweightFields + ',synopsis,background,studios,producers'
 
 export const DetailedAnimeDetailsSchema = LightweightAnimeDetailsSchema.extend({
   synopsis: z.string().nullable(),
@@ -41,6 +41,12 @@ export const DetailedAnimeDetailsSchema = LightweightAnimeDetailsSchema.extend({
       name: z.string(),
     })
   ),
+  producers: z.array(
+    z.object({
+      id: z.number(),
+      name: z.string(),
+    })
+  ).optional(),
 });
 
 export type DetailedAnimeDetails = z.infer<typeof DetailedAnimeDetailsSchema>;

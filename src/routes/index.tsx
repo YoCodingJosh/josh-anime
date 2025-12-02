@@ -23,7 +23,11 @@ function App() {
           </p>
         </div>
       </section>
-
+      <footer>
+        <div className="text-center p-4 text-sm text-gray-500">
+          Copyright &copy; {new Date().getFullYear()} CodingJosh. All rights reserved.
+        </div>
+      </footer>
     </div>
   )
 }
