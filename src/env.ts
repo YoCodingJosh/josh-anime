@@ -21,7 +21,7 @@ export const env = createEnv({
    * `process.env` or `import.meta.env`.
    */
   runtimeEnv: {
-    MAL_CLIENT_ID: process.env.MAL_CLIENT_ID,
+    MAL_CLIENT_ID: process.env.MAL_CLIENT_ID || import.meta.env.MAL_CLIENT_ID,
     VITE_APP_TITLE: import.meta.env.VITE_APP_TITLE,
   },
 
