@@ -13,5 +13,8 @@
       "invocation_logs": true,
       "persist": true
     }
+  },
+  "vars": {
+    "MAL_CLIENT_ID": "01b8ec24795d8895aed376494c35b04d",
   }
 }
