@@ -1,7 +1,9 @@
 import { createEnv } from '@t3-oss/env-core'
 import { z } from 'zod'
 
-export const env = createEnv({
+import { env } from 'cloudflare:workers'
+
+const t3env = createEnv({
   server: {
     MAL_CLIENT_ID: z.string(),
   },
@@ -21,8 +23,8 @@ export const env = createEnv({
    * `process.env` or `import.meta.env`.
    */
   runtimeEnv: {
-    MAL_CLIENT_ID: process.env.MAL_CLIENT_ID || import.meta.env.MAL_CLIENT_ID,
-    VITE_APP_TITLE: import.meta.env.VITE_APP_TITLE,
+    MAL_CLIENT_ID: process.env.MAL_CLIENT_ID || env.MAL_CLIENT_ID,
+    VITE_APP_TITLE: import.meta.env.VITE_APP_TITLE || env.VITE_APP_TITLE,
   },
 
   /**
@@ -40,3 +42,7 @@ export const env = createEnv({
    */
   emptyStringAsUndefined: true,
 })
+
+export {
+  t3env as env,
+}
