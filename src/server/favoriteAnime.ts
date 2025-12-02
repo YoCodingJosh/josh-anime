@@ -3,7 +3,7 @@ import { createServerFn } from '@tanstack/react-start'
 import __favoritesList from '@/data/anime.json'
 import { FavoriteAnimeList } from '@/schemas/FavoriteAnimeList';
 import { sleep } from '@/lib/utils';
-import { env } from '@/env';
+import { env } from 'cloudflare:workers';
 import { LightweightAnimeDetailsSchema, LightweightFields } from '@/schemas/AnimeDetails';
 
 /** MAL anime id array */

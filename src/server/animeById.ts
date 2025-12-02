@@ -2,7 +2,7 @@ import { createServerFn } from '@tanstack/react-start'
 
 import __favoritesList from '@/data/anime.json'
 import { FavoriteAnimeList } from '@/schemas/FavoriteAnimeList';
-import { env } from '@/env';
+import { env } from 'cloudflare:workers';
 import { DetailedAnimeDetailsSchema, DetailedFields } from '@/schemas/AnimeDetails';
 
 const { my_favorites: favoritesList }: FavoriteAnimeList = __favoritesList as FavoriteAnimeList;
